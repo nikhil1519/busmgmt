@@ -1,0 +1,53 @@
+<div class="col-md-6 offset-md-3">
+    <h5> Add Bus </h5>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="busNumber"> Bus Number </label>
+            <input type="text" class="form-control" id="busNumber" [(ngModel)]="bus.busNumber" name="busNumber">
+        </div>
+
+        <div class="form-group">
+            <label for="busAgency"> Bus Agency </label>
+            <input type="text" class="form-control" id="busAgency" [(ngModel)]="bus.busAgency" name="busAgency">
+        </div>
+
+        <div class="form-group">
+            <label for="sourceStation"> Source </label>
+            <input type="text" class="form-control" id="sourceStation" [(ngModel)]="bus.sourceStation" name="sourceStation">
+        </div>
+
+        <div class="form-group">
+            <label for="destinationStation"> Source </label>
+            <input type="text" class="form-control" id="destinationStation" [(ngModel)]="bus.destinationStation" name="destinationStation">
+        </div>
+
+        <div class="form-group">
+            <label for="seatingCapacity"> Seating Capacity</label>
+            <input type="number" class="form-control" id="seatingCapacity" [(ngModel)]="bus.seatingCapacity"
+                name="seatingCapacity">
+        </div>
+
+        <div class="form-group">
+            <label for="standingCapacity"> Standing Capacity</label>
+            <input type="number" class="form-control" id="standingCapacity" [(ngModel)]="bus.standingCapacity"
+                name="standingCapacity">
+        </div>
+
+        <div class="form-group">
+            <label> Available </label>
+            <div class="form-control">
+                <label class="radio-inline" style="margin-right: 25px;">
+                    <input type="radio" name="isAvailable" id="isAvailableYes" [(ngModel)]="bus.isAvailable" value="true">
+                    Yes
+                </label>
+                <label class="radio-inline" >
+                    <input type="radio" name="isAvailable" id="isAvailableNo"  [(ngModel)]="bus.isAvailable" value="false">
+                    No
+                </label>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>
