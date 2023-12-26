@@ -11,6 +11,10 @@ import { DeleteBusComponent } from './delete-bus/delete-bus.component';
 import { ViewBusComponent } from './view-bus/view-bus.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
+import { BackButtonDisableModule } from 'angular-disable-browser-back-button';
+import { SignOutComponent } from './sign-out/sign-out.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -21,12 +25,16 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ViewBusComponent,
     SignInComponent,
     SignUpComponent,
+    HomeComponent,
+    SignOutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    BackButtonDisableModule.forRoot({ preserveScroll: true }),
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

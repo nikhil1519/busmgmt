@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Bus } from '../bus';
 import { BusService } from '../bus.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-bus-list',
@@ -9,11 +10,14 @@ import { BusService } from '../bus.service';
   styleUrls: ['./bus-list.component.css']
 })
 export class BusListComponent implements OnInit {
+[x: string]: any;
 
-  buses: Bus[] | undefined;
+  buses!: Bus[];
+  count: number = 4;
+  p: number = 1;
 
   constructor(private busService: BusService,
-    private router: Router) { }
+    private router: Router, protected userService: UserService) { }
 
   ngOnInit(): void {
     this.getBuses();

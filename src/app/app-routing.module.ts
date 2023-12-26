@@ -7,6 +7,7 @@ import { ViewBusComponent } from './view-bus/view-bus.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
 
 const routes: Routes = [
   {path: 'buses', component: BusListComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'update-bus/:busNumber', component: UpdateBusComponent},
   {path: 'view-bus/:busNumber', component: ViewBusComponent},
   {path: 'sign-up', component: SignUpComponent},
-  {path: 'sign-in', component: SignInComponent}
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'sign-out', component: SignOutComponent}
 ];
 
 @NgModule({

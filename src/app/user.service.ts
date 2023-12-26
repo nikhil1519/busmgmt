@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './user';
 import { Router } from '@angular/router';
-// import { Booking } from './Booking';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +30,7 @@ export class UserService {
   }
   logOut() {
     sessionStorage.removeItem('loginStatus')
-    // this.router.navigate['/sigin'];
+    this.router.navigate['sign-in'];
   }
 
 }

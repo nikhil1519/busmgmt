@@ -1,11 +1,31 @@
+<div class="mx-auto py-3" style="width: 50%;">
+    <form class="card border border-3 border-dark p-3" (ngSubmit)="onSubmit()">
 
-<div class="col-md-6 offset-md-3">
-    <h3> Update Bus </h3>
-    <form (ngSubmit)="onSubmit()">
+        <div class="text-center" id="legend">
+            <legend class="fw-bold"> Update Bus </legend>
+        </div>
 
         <div class="form-group">
-            <label for="busNumber"> Bus Number </label>
-            <input type="text" class="form-control" id="busNumber" [(ngModel)]="bus.busNumber" name="busNumber">
+            <label class="control-label p-5" for="busNumber"> Bus Number </label>
+            <input type="text" class="controls" id="busNumber" [(ngModel)]="bus.busNumber" name="busNumber" disabled="true">
+        </div>
+
+        <div class="form-group">
+            <label for="busAgency"> Bus Agency </label>
+            <input type="text" class="form-control" id="busAgency" [(ngModel)]="bus.busAgency"
+                name="busAgency">
+        </div>
+
+        <div class="form-group">
+            <label for="sourceStation"> Source </label>
+            <input type="text" class="form-control" id="sourceStation" [(ngModel)]="bus.sourceStation"
+                name="sourceStation">
+        </div>
+
+        <div class="form-group">
+            <label for="destinationStation"> Destination </label>
+            <input type="text" class="form-control" id="destinationStation" [(ngModel)]="bus.destinationStation"
+                name="destinationStation">
         </div>
 
         <div class="form-group">
@@ -24,7 +44,7 @@
             <label> Available </label>
             <div class="form-control">
                 <label class="radio-inline" style="margin-right: 25px;">
-                    <input type="radio" name="isAvailable"  [(ngModel)]="bus.isAvailable" value="true">
+                    <input type="radio" name="isAvailable" [(ngModel)]="bus.isAvailable" value="true">
                     Yes
                 </label>
                 <label class="radio-inline">
@@ -34,6 +54,8 @@
             </div>
         </div>
         <br>
-        <button class="btn btn-success" type="submit">Submit</button>
+        <div class="form-group controls text-center py-3">
+            <button class="btn btn-success" type="submit">Submit</button>
+        </div>
     </form>
 </div>

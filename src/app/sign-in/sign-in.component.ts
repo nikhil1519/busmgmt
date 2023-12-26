@@ -17,7 +17,7 @@ export class SignInComponent {
     this.userService.signin(email, password).subscribe(
       response => {
         console.log(response);
-        alert('login successful');
+        alert('Login successful');
         sessionStorage.setItem("loginStatus", "active");
         sessionStorage.setItem("userId", response.userId);
         sessionStorage.setItem("userRole", response.userRole);

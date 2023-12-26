@@ -1,22 +1,25 @@
 
 <h2> Bus List</h2>
-<table class = "table table-striped">
+<table class = "table table-striped border border-3 border-dark">
     <thead>
         <tr>
             <th> Bus Number </th>
-            <th> Seating Capacity </th>
+            <th> Bus Agency </th>
+            <th> Source </th>
+            <th> Destination </th>
+            <th> Actions </th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let bus of buses" >
+        <tr *ngFor = "let bus of buses | paginate: { itemsPerPage: count, currentPage: p }" >
             <td> {{ bus.busNumber }} </td>
             <td> {{ bus.busAgency }} </td>
             <td> {{ bus.sourceStation }} </td>
             <td> {{ bus.destinationStation }} </td>
             <td>
-                <button (click) = "updateBus(bus.busNumber)" class = "btn btn-secondary"> Update</button>
-                <button (click) = "deleteBus(bus.busNumber)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "viewBus(bus.busNumber)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+                <button (click) = "updateBus(bus.busNumber)" class = "btn btn-secondary" *ngIf="userService.isUserLoggedIn()"> Update</button>
+                <button (click) = "deleteBus(bus.busNumber)" class = "btn btn-danger" style="margin-left: 10px" *ngIf="userService.isUserLoggedIn()"> Delete</button>
+                <button (click) = "viewBus(bus.busNumber)" class = "btn btn-info" style="margin-left: 10px" *ngIf="userService.isUserLoggedIn()"> View</button>
             </td>
         </tr>
     </tbody>
